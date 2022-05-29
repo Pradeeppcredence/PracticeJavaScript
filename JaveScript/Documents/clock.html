@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .hour {
+                color: orange;
+            }
+            .mins {
+                color: darkblue;
+            }
+            .sec {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="clock">
+            <span class="hour">Hour</span>:
+            <span class="mins">Mins</span>:
+            <span class="sec">Sec</span>
+        </div>
+
+        <script>
+            function update() {
+                let clock = document.getElementById('clock');
+                let date = new Date(); // (*)
+                let hours = date.getHours();
+                if (hours < 10) hours = '0' + hours;
+                clock.children[0].innerHTML = hours;
+    
+                let minutes = date.getMinutes();
+                if (minutes < 10) minutes = '0' + minutes;
+                clock.children[1].innerHTML = minutes;
+    
+                let seconds = date.getSeconds();
+                if (seconds < 10) seconds = '0' + seconds;
+                clock.children[2].innerHTML = seconds;
+                }
+    
+                let timerId;
+    
+                function clockStart() { // run the clock
+                    if (!timerId) { // only set a new interval if the clock is not running
+                        timerId = setInterval(update, 1000);
+                    }
+                   update(); // (*)
+                    }
+    
+                function clockStop() {
+                    clearInterval(timerId);
+                    timerId = null; // (**)
+                    }
+        </script>
+         <input type="button" onclick="clockStart()" value="Start">
+    
+         <!-- click on this button calls clockStop() 
+         <input type="button" onclick="clockStop()" value="Stop">
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a small Form</title>
+</head>
+<body>
+    <form action="" id="formpost">
+        <input type="text" placeholder="Enter your Name"/>
+        <input type="email" name="Email" placeholder="Enter your Email" />
+        <input type="password" name="password" placeholder="Create Your Password" />
+        <input type="submit" />
+    </form>
+    <canvas height="100px" width="100px" style="border: 2px solid"></canvas>
+
+    <script>
+        formpost.onsubmit = async (e)=> {
+            e.preventDefault();
+            let response = await fetch('https://www.google.com/user', {
+                method: 'POST',
+                body : new FormData(formpost)
+            });
+            let result = await response.json();
+            alert(result.message);
+        };
+    </script>
+</body>
+</html>
