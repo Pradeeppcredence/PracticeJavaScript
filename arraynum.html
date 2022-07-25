@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="total">
+        Result : 
+    </div>
+    <script>
+        // const arr1 = [9,8,7,6,5,4,3,2,1]
+        //GET TOTAL OF ARRAY FROM REDUCE METHOD
+        // const Result = arr1.reduce((sum, num) =>{ return sum + num }, 0)
+
+        // GET TOTAL OF ARRAY FORM FOR IN LOOP
+        // var Result = 0;
+        // for( let i in arr1 ){
+        //     Result += arr1[i]
+        // }
+
+        // GET EVEN NUMBER FROM ARRAY
+        // var Result = [];
+        // for( let i in arr1 ){
+        //     if(arr1[i]%2 == 0){
+        //         Result.push(arr1[i])
+        //     }
+        // }
+        
+        // GET EVEN NUMBER FROM FILLTER
+        // var Result = arr1.filter(i => (i % 2 != 0));
+
+        // PRINT STAR PYRAMID 
+        // let n= 5;
+        function createPyramid(rows)
+            {
+                for (let i = 1; i < rows; i++) {
+                    var output = '';
+                    for (let j =1; j < rows - i; j++) output += ' ';
+                    for (let k = 1; k <= i; k++) output += `${k}`;
+                    console.log(output);  
+                } 
+            }
+
+            createPyramid(5)
+
+        
+        // document.getElementById("total").innerHTML = Result 
+    </script>
+</body>
+</html> -->
+
+<!-- --------END--------
